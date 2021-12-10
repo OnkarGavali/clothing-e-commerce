@@ -7,6 +7,9 @@ import { connect } from 'react-redux'
 import './header.styles.scss'
 import CartIcon from '../cart-icon/cart-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
+import { selectCurrentUser } from '../../redux/user/user.selectors'
+import { selectCartHidden } from '../../redux/cart/cart.selectors'
+import { createStructuredSelector } from 'reselect'
 
 const Header = ({ currentUser, hidden }) => {
     return (
@@ -38,9 +41,10 @@ const Header = ({ currentUser, hidden }) => {
     )
 }
 
-const mapStateToProps = ({ user : { currentUser }, cart : { hidden } }) => ({
-    currentUser,
-    hidden
+// here createStructuredSelector take highest store stae as default parameter here is state so dont have to mention state here
+const mapStateToProps = createStructuredSelector({
+    currentUser : selectCurrentUser,
+    hidden : selectCartHidden
 })
 
 
