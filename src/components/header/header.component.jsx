@@ -20,8 +20,8 @@ const Header = ({ currentUser, hidden }) => {
             </LogoContainer>
 
             <OptionsContainer>
-                <OptionLink  to='shop'>SHOP</OptionLink>
-                <OptionLink  to='shop'>CONTACT</OptionLink>
+                <OptionLink  to='/shop'>SHOP</OptionLink>
+                <OptionLink  to='/shop'>CONTACT</OptionLink>
 
                 {/* another option is to use only one component as send child tag as prop  under as=<tag or component> and because of this we font need to create 2 differnt components 
                 <OptionDiv as={Link} to='shop'>CONTACT</OptionDiv> */}
